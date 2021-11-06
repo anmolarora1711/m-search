@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { data } from "../data";
 import Navbar from "./Navbar";
 import MovieCard from "./MovieCard";
+import { addMovies } from '../actions';
+
 
 class App extends Component {
 
@@ -13,10 +15,7 @@ class App extends Component {
 		})
 		// make api call
 		// dispatch action
-		store.dispatch({
-			type: 'ADD_MOVIES',
-			movies: data
-		});
+		store.dispatch(addMovies(data));
 
 		console.log('State', store.getState());
 	}
